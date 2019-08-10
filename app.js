@@ -15,9 +15,9 @@ function getComputerChoice(){
 }
 
 function convertToWord(letter){
-  if(letter === "r") return "Rock";
-  if(letter === "p") return "Papper";
-  return "Scissors";
+  if(letter === "r") return "Pedra";
+  if(letter === "p") return "Papel";
+  return "Tesolra";
 }
 
 function win(user, computer){
@@ -27,7 +27,7 @@ function win(user, computer){
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = `${convertToWord(user)}${smallUserWord} beats ${convertToWord(computer)}${smallCompWord} . You win! 🔥`;
+  result_p.innerHTML = `${convertToWord(user)}${smallUserWord} vence ${convertToWord(computer)}${smallCompWord} . Você venceu! 🔥`;
   userChoice_div.classList.add('green-glow');
   setTimeout(() => userChoice_div.classList.remove('green-glow'), 300);
 }
@@ -39,7 +39,7 @@ function lose(user, computer){
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = `${convertToWord(user)}${smallUserWord} loses to ${convertToWord(computer)}${smallCompWord}. You lost! 💩`;
+  result_p.innerHTML = `${convertToWord(user)}${smallUserWord} perde para ${convertToWord(computer)}${smallCompWord}. Você perdeu! 💩`;
   userChoice_div.classList.add('red-glow');
   setTimeout(() => userChoice_div.classList.remove('red-glow'), 300);
 }
@@ -48,7 +48,7 @@ function draw(user, computer){
   const smallUserWord = "user".fontsize(3).sub();
   const smallCompWord = "comp".fontsize(3).sub();
   const userChoice_div = document.getElementById(user);
-  result_p.innerHTML = `${convertToWord(user)}${smallUserWord} equals ${convertToWord(computer)}${smallCompWord}. It's a Draw`
+  result_p.innerHTML = `${convertToWord(user)}${smallUserWord} é igual ${convertToWord(computer)}${smallCompWord}. Empatou!`
   userChoice_div.classList.add('gray-glow');
   setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
 }
